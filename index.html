@@ -1,0 +1,75 @@
+<html>
+<head>
+<title> Online Course Registration Website </title>
+</head>
+<script language="javascript">
+	function check_data(){
+		if (document.loginForm.user_name.value == ''){
+			alert("Please enter username");
+			document.loginForm.user_name.focus();
+			return false;
+		}
+		if (document.loginForm.pwd.value == ''){
+			alert("Please enter password");
+			document.loginForm.pwd.focus();
+			return false;
+		}
+		return true;
+	};	
+</script>
+
+<h1 align="center" style="font-family:arial;font-size:25pt;color:black;font-weight:bold;">
+	Autoreg: Online Course Registration
+<h1>
+<br><br>
+
+<form name="loginForm" method="POST" action="checkLogin.php">
+	<table align="center" bgcolor="#001116" border="0" cellpadding="3" cellspacing="8" width="400">
+		<tbody style="font-family:arial;color:white;">
+		<tr style="font-size:15pt;" align="center">	
+			<td colspan="2">
+				Login To Autoreg
+			</td>
+		</tr>     
+		<tr>     
+			<br>
+		</tr>
+		<tr >	
+			<td align="right"><b>
+				Username:
+			</b></td>
+			<td>
+				<input name="user_name" size="30" type="text">
+			</td>
+       </tr>
+       <tr>
+       		<td align="right">
+       			<b>	Password: </b>
+       		</td>
+            <td>
+				<input name="pwd" size="30" value="" type="password">
+            </td>
+        </tr>
+        <tr>
+			<td>
+			<b > Role: <b>
+			</td>
+			<td>
+				<select name="role">
+					<option value="st">Student</option>
+					<option value="pro">Professor</option>
+					<option value="admin">Administrator</option>
+					<option value="hod">HOD</option>
+				</select>
+			</td>
+		</tr>
+        <tr align="center">
+		<td colspan="2">
+			<input name="Login" value="Login" onclick="return check_data();" type="submit">
+		   	<input name="Reset" type="reset">
+		</td>
+       </tr>
+    </tbody>
+    </table>
+</form>
+</html>
